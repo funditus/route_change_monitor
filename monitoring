@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while true
+        do
+                HOST="89.218.75.37"
+                ping  "$HOST" -c 10 || mtr "$HOST" --report >> traceroute_"$HOST"_`date '+%Y%m%d-%H-%M-%S'`.log
+                HOST="89.218.75.33"
+                ping  "$HOST" -c 10 || mtr "$HOST" --report >> traceroute_"$HOST"_`date '+%Y%m%d-%H-%M-%S'`.log
+                HOST="idhost.kz"
+                ping  "$HOST" -c 10 || mtr "$HOST" --report >> traceroute_"$HOST"_`date '+%Y%m%d-%H-%M-%S'`.log
+                HOST="egov.kz"
+                ping  "$HOST" -c 10 || mtr "$HOST" --report >> traceroute_"$HOST"_`date '+%Y%m%d-%H-%M-%S'`.log
+                sleep 1
+        done
